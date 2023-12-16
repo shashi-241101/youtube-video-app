@@ -45,7 +45,7 @@ const App = () => {
   return (
     <div className="App">
     <div className="head">
-      <h1 >YouTube Video Player</h1>
+      <div className="serchbox"><h1 >YouTube Video Player</h1>
       <input
         type="text"
         placeholder="Enter a keyword"
@@ -54,8 +54,9 @@ const App = () => {
       />
       <Button variant="primary" onClick={searchVideos}>
         Search Videos
-      </Button>
-
+      </Button></div>
+      
+    
       {selectedVideoId && (
         <ReactPlayer
           url={`https://www.youtube.com/watch?v=${selectedVideoId}`}
@@ -71,13 +72,13 @@ const App = () => {
         <div className="card-container">
           {videos.map((video) => (
             <Card key={video.id.videoId} style={{ width: '18rem' }} className="mb-3">
-              <Card.Img variant="top" src={video.snippet.thumbnails.default.url} />
+               <Button variant="primary" onClick={() => onVideoSelect(video.id.videoId)}>
+                <Card.Img variant="top" src={video.snippet.thumbnails.default.url} />
+                </Button>
               <Card.Body>
                 <Card.Title>{video.snippet.title}</Card.Title>
                 {/* <Card.Text>{video.snippet.description}</Card.Text> */}
-                <Button variant="primary" onClick={() => onVideoSelect(video.id.videoId)}>
-                  Watch
-                </Button>
+               
               </Card.Body>
             </Card>
           ))}
