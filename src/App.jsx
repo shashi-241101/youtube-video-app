@@ -1,73 +1,6 @@
-// import React, { useState } from 'react';
-// import axios from 'axios';
-// import ReactPlayer from 'react-player/youtube';
-
-// const App = () => {
-//   const [videoId, setVideoId] = useState('');
-//   const [player, setPlayer] = useState(null);
-
-//   const onVideoIdChange = (event) => {
-//     setVideoId(event.target.value);
-//   };
-
-//   const loadVideo = async () => {
-//     try {
-//       const response = await axios.get(
-//         `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=AIzaSyCTdZ8ptXRWksNDRrr2RwuQA-aiJUQiOxk&part=snippet`
-//       );
- 
-//       if (response.data.items.length === 0) {
-//         throw new Error('Video not found.');
-//       }
-  
-//       const videoTitle = response.data.items[0].snippet.title;
-//       alert(`Loading video: ${videoTitle}`);
-
-//       if (player) {
-//         console.log('player exists');
-//         player.loadVideoById(videoId);
-//       }
-//     } catch (error) {
-//       console.log('we are here');
-//       console.error('Error loading video:', error.message);
-//     }
-//   };
-
-//   const onPlayerReady = (event) => {
-//     // Do something when the player is ready
-//   };
-
-//   const onPlayerStateChange = (event) => {
-//     // Do something when the player state changes
-//   };
-
-//   return (
-//     <div>
-//       <h1>YouTube Video Player</h1>
-//       <input
-//         type="text"
-//         placeholder="Enter YouTube Video ID"
-//         value={videoId}
-//         onChange={onVideoIdChange}
-//       />
-//       <button onClick={loadVideo}>Load Video</button>
-//       {videoId && (
-//         <ReactPlayer
-//           url={`https://www.youtube.com/watch?v=${videoId}`}
-//           controls
-//           playing
-//           width="100%"
-//           height="360px"
-//           onReady={onPlayerReady}
-//           onStateChange={onPlayerStateChange}
-//         />
-//       )}
-//     </div>
-//   );
-// };
-
 // export default App;
 import React, { useState, useEffect } from 'react';
+import './App.css';
 import ReactPlayer from 'react-player/youtube';
 import axios from 'axios';
 import Card from 'react-bootstrap/Card';
@@ -110,8 +43,9 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>YouTube Video Player</h1>
+    <div className="App">
+    <div className="head">
+      <h1 >YouTube Video Player</h1>
       <input
         type="text"
         placeholder="Enter a keyword"
@@ -127,12 +61,12 @@ const App = () => {
           url={`https://www.youtube.com/watch?v=${selectedVideoId}`}
           controls
           playing
-          width="100%"
-          height="360px"
+          width="60%"
+          height="600px"
         />
       )}
 
-      <div>
+      <div className="sidebar">
         <h2>Related Videos:</h2>
         <div className="card-container">
           {videos.map((video) => (
@@ -140,7 +74,7 @@ const App = () => {
               <Card.Img variant="top" src={video.snippet.thumbnails.default.url} />
               <Card.Body>
                 <Card.Title>{video.snippet.title}</Card.Title>
-                <Card.Text>{video.snippet.description}</Card.Text>
+                {/* <Card.Text>{video.snippet.description}</Card.Text> */}
                 <Button variant="primary" onClick={() => onVideoSelect(video.id.videoId)}>
                   Watch
                 </Button>
@@ -149,6 +83,7 @@ const App = () => {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };
