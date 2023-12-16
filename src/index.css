@@ -2,7 +2,7 @@ body {
     margin-top: 10px;
     font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    background-color: #282c34;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -140,4 +140,13 @@ body {
       background-color: #f9f9f9;
     }
     
+    @media (max-width: 767px) {
+        .video-player {
+          width: 100%; /* Make the video player full width for smaller screens */
+        }
+      }
+    
   }
+
+
+  

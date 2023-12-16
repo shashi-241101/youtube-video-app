@@ -70,7 +70,8 @@ const App = () => {
         </div>
 
       <div className="sidebar">
-        <h2>Related Videos:</h2>
+        {!selectedVideoId ? <><h2>Search for something...</h2></>:<><h2>Related Videos:</h2></>}
+        
         <div className="card-container">
           {videos.map((video) => (
             <Card key={video.id.videoId} style={{ width: '18rem' }} className="mb-3">
