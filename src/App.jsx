@@ -13,7 +13,7 @@ const App = () => {
 
   const onKeywordChange = (event) => {
     setKeyword(event.target.value);
-  };
+  };2
 
   const searchVideos = async () => {
     try {
@@ -36,7 +36,7 @@ const App = () => {
     if (keyword.trim() !== '') {
       searchVideos();
     }
-  }, [keyword]);
+  }, []);
 
   const onVideoSelect = (videoId) => {
     setSelectedVideoId(videoId);
@@ -56,16 +56,18 @@ const App = () => {
         Search Videos
       </Button></div>
       
-    
+      <div className="video">
+
       {selectedVideoId && (
         <ReactPlayer
-          url={`https://www.youtube.com/watch?v=${selectedVideoId}`}
-          controls
-          playing
-          width="60%"
-          height="600px"
+        url={`https://www.youtube.com/watch?v=${selectedVideoId}`}
+        controls
+        playing
+        width="60%"
+        height="600px"
         />
-      )}
+        )}
+        </div>
 
       <div className="sidebar">
         <h2>Related Videos:</h2>

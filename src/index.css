@@ -30,8 +30,15 @@ body {
     background-color: #282c34;
     padding: 20px;
     text-align: center;
+    justify-content: center;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  .video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .head input {
