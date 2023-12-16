@@ -45,7 +45,7 @@ const App = () => {
   return (
     <div className="App">
     <div className="head">
-      <div className="serchbox"><h1 >YouTube Video Player</h1>
+      <div className="serchbox"><h1 >VideoVista</h1>
       <input
         type="text"
         placeholder="Enter a keyword"
