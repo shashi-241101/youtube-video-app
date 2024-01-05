@@ -1,11 +1,8 @@
 body {
-    margin-top: 10px;
+    /* margin-top: 10px; */
     font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
     color: rgba(255, 255, 255, 0.87);
     background-color: #282c34;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
   
   h1 {
@@ -19,7 +16,7 @@ body {
   }
   
   .app {
-    background-color: z#282c34;
+    background-color: #282c34;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,6 +79,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    color:white;
   }
   
   .card img {
